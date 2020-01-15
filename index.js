@@ -3,7 +3,7 @@ setupOverlay();
 // let CCapture = require("ccapture.js");
 // var capturer = new CCapture({ format: "webm", framerate: 60 });
 
-const regl = require("regl")({ pixelRatio: 0.75 });
+const regl = require("regl")({ pixelRatio: window.devicePixelRatio });
 // const { setupWebcam } = require("./src/regl-webcam");
 let shaders = require("./src/pack.shader.js");
 let vert = shaders.vertex;
