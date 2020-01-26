@@ -84,7 +84,8 @@ void main() {
   // vec3 hue = red;
   float m = 100.;
   // pos += noise(vec3(pos * 15., 0.5)) * 0.01;
-  float scale = 30. + (noise(vec3(pos * 0.5, t * 0.005)) * 1.5);
+  float scale =
+      30. + (noise(vec3(pos * 0.5 + vec2(t * -0.001, 0.), t * 0.001)) * 1.5);
   scale /= 3.0;
   vec3 c = voronoi(scale * pos);
 
@@ -109,17 +110,17 @@ void main() {
   // if (c.z < 0.7) {
   //   col = hsv2rgb(vec3(0.05, 0.9, 0.35));
   // }
-  vec2 spos = pos + noise(vec3(pos * 2., 0.5 + t * 0.003)) * 0.4;
+  vec2 spos = pos + noise(vec3(pos * 2., 0.5 + t * 0.0001)) * 0.0;
 
   float dilation =
       (scale / 30.) *
-          (noise(vec3((spos * vec2(1.0, 2.)) + vec2(h * 5., t * 0.004) +
+          (noise(vec3((spos * vec2(1.0, 2.)) + vec2(t * -0.01, h * 5.) +
                           (vec2(0.3) * h),
                       t * 0.000)) -
            0.3) *
           1.3
 
-      + 0.6 + ((sin((t * 0.01) + c.z * 0.4) + 0.2) * 0.5);
+      + 0.6 + ((sin((t * 0.01) + c.z * 0.4) + 0.2) * 0.2);
 
   // dilation = 1.0 - abs(length(webcamColor - col));
   // dilation += 1.0;
