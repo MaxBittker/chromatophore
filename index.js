@@ -3,6 +3,15 @@ setupOverlay();
 // let CCapture = require("ccapture.js");
 // var capturer = new CCapture({ format: "webm", framerate: 60 });
 
+function downloadURI(uri, filename) {
+  var link = document.createElement("a");
+  link.download = filename;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 const regl = require("regl")({
   pixelRatio: Math.min(window.devicePixelRatio, 2)
 });
@@ -90,8 +99,12 @@ regl.frame(function(context) {
   });
   // debugger;
   f++;
-  if (f < 60 * 5) {
-    // capturer.capture(regl._gl.canvas);
+  if (f < 60 * 5 && f % 2) {
+    f++;
+    // downloadURI(
+    // regl._gl.canvas.toDataURL(),
+    // `chlor-frame-${(f / 2).toString().padStart(8, "0")}.png`
+    // );/
   } else {
     // capturer.stop();
     // default save, will download automatically a file called {name}.extension (webm/gif/tar)

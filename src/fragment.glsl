@@ -125,19 +125,21 @@ void main() {
   float dd = (c.y - c.x) * (1.0 - c.x * 1.0);
   dd *= dilation;
   dd *= 1.5;
-  col = hsv2rgb(vec3(0.9, 1.2 - (dilation * 0.3) - c.x * 0.2, 0.7));
+  col = hsv2rgb(vec3(0.9, 0.6 - (dilation * 0.15) - c.x * 0.2, 0.7));
   if (c.z < 1.2) {
-    col = hsv2rgb(vec3(0.5, 1.1 - dilation * 0.2, 0.6));
+    col = hsv2rgb(vec3(0.5, 0.6 - dilation * 0.1, 0.6));
   }
   if (c.z < 0.7) {
-    col = hsv2rgb(vec3(0.7, 1.2 - dilation * 0.2, 0.95));
+    col = hsv2rgb(vec3(0.7, 0.6 - dilation * 0.1, 0.95));
   }
 
   if (dd > 0.4 || c.x < 0.05) {
     color = col;
   } else {
     // color += col * 0.03;
-    color = col * 0.00;
+    // color = col * 0.00;
+
+    color = vec3(244.0 / 255.0, 238.0 / 255.0, 239.0 / 255.0);
   }
   // color = (c.y - c.x) * col;
   // vec3 cel = cellular(pos * 5.);
