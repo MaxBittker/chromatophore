@@ -85,6 +85,7 @@ void main() {
   float m = 100.;
   // pos += noise(vec3(pos * 15., 0.5)) * 0.01;
   float scale = 30. + (noise(vec3(pos * 0.5, t * 0.005)) * 3.);
+  scale /= 2.0;
   vec3 c = voronoi(scale * pos);
 
   // colorize
