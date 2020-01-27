@@ -13,7 +13,7 @@ function downloadURI(uri, filename) {
 }
 
 const regl = require("regl")({
-  pixelRatio: Math.min(window.devicePixelRatio, 2)
+  pixelRatio: Math.min(window.devicePixelRatio, 1)
 });
 // const { setupWebcam } = require("./src/regl-webcam");
 let shaders = require("./src/pack.shader.js");
