@@ -114,13 +114,13 @@ void main() {
 
   float dilation =
       (scale / 30.) *
-          (noise(vec3((spos * vec2(1.0, 2.)) + vec2(t * -0.01, h * 5.) +
+          (noise(vec3((spos * vec2(1.0, 2.)) + vec2(t * -0.001, h * 5.) +
                           (vec2(0.3) * h),
                       t * 0.000)) -
            0.3) *
           1.3
 
-      + 0.6 + ((sin((t * 0.01) + c.z * 0.4) + 0.2) * 0.2);
+      + 0.6 + ((sin((t * 0.001) + c.z * 0.4) + 0.2) * 0.2);
 
   // dilation = 1.0 - abs(length(webcamColor - col));
   // dilation += 1.0;
