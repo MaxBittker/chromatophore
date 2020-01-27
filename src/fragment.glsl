@@ -110,11 +110,11 @@ void main() {
   // if (c.z < 0.7) {
   //   col = hsv2rgb(vec3(0.05, 0.9, 0.35));
   // }
-  vec2 spos = pos + noise(vec3(pos * 2., 0.5 + t * 0.0001)) * 0.0;
+  vec2 spos = pos + noise(vec3(pos * 2., 0.5 + t * 0.0005)) * 0.0;
 
   float dilation =
       (scale / 30.) *
-          (noise(vec3((spos * vec2(1.0, 2.)) + vec2(t * -0.001, h * 5.) +
+          (noise(vec3((spos * vec2(1.0, 2.)) + vec2(t * -0.004, h * 5.) +
                           (vec2(0.3) * h),
                       t * 0.000)) -
            0.3) *
