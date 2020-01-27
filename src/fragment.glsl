@@ -1,7 +1,7 @@
 precision highp float;
 uniform float t;
 uniform vec2 resolution;
-uniform sampler2D backBuffer;
+// uniform sampler2D backBuffer;
 // uniform sampler2D webcam;
 // uniform vec2 videoResolution;
 // uniform vec2 eyes[2];
@@ -178,7 +178,7 @@ void main() {
   //   0.5) *
   //               (1. - weight);
 
-  //   color = texture2D(backBuffer, textCoord - fall).rgb * 1.0;
+  color = texture2D(backBuffer, textCoord - fall).rgb * 1.0;
   //   if (uv.y < 0.0) {
   //     // color =weight * vec3(1.0);
   //   }

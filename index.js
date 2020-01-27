@@ -50,8 +50,8 @@ let drawTriangle = regl({
     resolution: ({ viewportWidth, viewportHeight }) => [
       viewportWidth,
       viewportHeight
-    ],
-    backBuffer: lastFrame
+    ]
+    // backBuffer: lastFrame
     // "eyes[0]": () => {
     //   // let positions = ct.getCurrentPosition();
     //   if (positions) {
@@ -94,9 +94,9 @@ regl.frame(function(context) {
     color: [0, 0, 0, 1]
   });
   drawTriangle();
-  lastFrame({
-    copy: true
-  });
+  // lastFrame({
+  //   copy: true
+  // });
   // debugger;
   f++;
   if (f < 60 * 5 && f % 2) {
