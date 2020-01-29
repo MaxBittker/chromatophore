@@ -28,7 +28,7 @@ shaders.on("change", () => {
   overlay && overlay.parentNode.removeChild(overlay);
 });
 
-const lastFrame = regl.texture();
+// const lastFrame = regl.texture();
 // const pixels = regl.texture();
 // let ct;
 // let last27 = [0, 0];
@@ -90,26 +90,26 @@ let drawTriangle = regl({
 let f = 0;
 
 regl.frame(function(context) {
-  regl.clear({
-    color: [0, 0, 0, 1]
-  });
+  // regl.clear({
+  // color: [0, 0, 0, 0]
+  // });
   drawTriangle();
   // lastFrame({
   //   copy: true
   // });
   // debugger;
-  f++;
-  if (f < 60 * 5 && f % 2) {
-    f++;
-    // downloadURI(
-    // regl._gl.canvas.toDataURL(),
-    // `chlor-frame-${(f / 2).toString().padStart(8, "0")}.png`
-    // );/
-  } else {
-    // capturer.stop();
-    // default save, will download automatically a file called {name}.extension (webm/gif/tar)
-    // capturer.save();
-  }
+  // f++;
+  // if (f < 60 * 5 && f % 2) {
+  // f++;
+  // downloadURI(
+  // regl._gl.canvas.toDataURL(),
+  // `chlor-frame-${(f / 2).toString().padStart(8, "0")}.png`
+  // );/
+  // } else {
+  // capturer.stop();
+  // default save, will download automatically a file called {name}.extension (webm/gif/tar)
+  // capturer.save();
+  // }
 });
 // }
 // });

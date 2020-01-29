@@ -198,5 +198,5 @@ void main() {
   // color = vec3(1.);
   // color *= 0.25;
   // }
-  gl_FragColor = vec4(color, 1.0);
+  gl_FragColor = vec4(color, 0.8);
 }
